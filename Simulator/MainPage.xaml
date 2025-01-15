@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Simulator.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="20"
+            Spacing="15">
+
+            <!-- Header -->
+            <Label Text="OS Simulator"
+                   FontSize="24"
+                   HorizontalOptions="Center" />
+
+            <!-- Operating System Selection -->
+            <Picker x:Name="OsPicker" Title="Select Operating System">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Windows</x:String>
+                        <x:String>Android</x:String>
+                        <x:String>iOS</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+
+            <!-- Process Management -->
+            <Button Text="Simulate Process Management"
+                    Clicked="OnSimulateProcessManagement" />
+
+            <!-- Memory Management -->
+            <Button Text="Simulate Memory Management"
+                    Clicked="OnSimulateMemoryManagement" />
+
+            <!-- File Management -->
+            <Button Text="Simulate File Management"
+                    Clicked="OnSimulateFileManagement" />
+
+            <!-- I/O Management -->
+            <Button Text="Simulate I/O Management"
+                    Clicked="OnSimulateIOManagement" />
+
+            <!-- Output Display -->
+            <Editor x:Name="OutputEditor"
+                    HeightRequest="300"
+                    IsReadOnly="True"
+                    BackgroundColor="LightGray" />
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
