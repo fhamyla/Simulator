@@ -4,47 +4,48 @@
              x:Class="Simulator.MainPage">
 
     <ScrollView>
-        <VerticalStackLayout
-            Padding="20"
-            Spacing="15">
+        <VerticalStackLayout Padding="30,0" Spacing="25">
 
-            <!-- Header -->
-            <Label Text="OS Simulator"
-                   FontSize="24"
-                   HorizontalOptions="Center" />
-
-            <!-- Operating System Selection -->
-            <Picker x:Name="OsPicker" Title="Select Operating System">
-                <Picker.ItemsSource>
-                    <x:Array Type="{x:Type x:String}">
-                        <x:String>Windows</x:String>
-                        <x:String>Android</x:String>
-                        <x:String>iOS</x:String>
-                    </x:Array>
-                </Picker.ItemsSource>
+            <!-- OS Picker -->
+            <Picker x:Name="OsPicker">
+                <Picker.Items>
+                    <x:String>Windows</x:String>
+                    <x:String>Android</x:String>
+                    <x:String>iOS</x:String>
+                </Picker.Items>
             </Picker>
 
-            <!-- Process Management -->
-            <Button Text="Simulate Process Management"
-                    Clicked="OnSimulateProcessManagement" />
+            <!-- Priority Picker -->
+            <Picker x:Name="PriorityPicker" Title="Select Process Priority">
+                <Picker.Items>
+                    <x:String>Low</x:String>
+                    <x:String>Medium</x:String>
+                    <x:String>High</x:String>
+                </Picker.Items>
+            </Picker>
 
-            <!-- Memory Management -->
-            <Button Text="Simulate Memory Management"
-                    Clicked="OnSimulateMemoryManagement" />
+            <!-- Button to Simulate Process Creation -->
+            <Button Text="Simulate Process Creation" Clicked="OnSimulateProcessClick"/>
 
-            <!-- File Management -->
-            <Button Text="Simulate File Management"
-                    Clicked="OnSimulateFileManagement" />
+            <!-- Button to Simulate Memory Allocation -->
+            <Button Text="Simulate Memory Allocation" Clicked="OnSimulateMemoryAllocation"/>
 
-            <!-- I/O Management -->
-            <Button Text="Simulate I/O Management"
-                    Clicked="OnSimulateIOManagement" />
+            <!-- Button for File Operations -->
+            <Button Text="Create File" Clicked="OnCreateFile"/>
+            <Button Text="Read File" Clicked="OnReadFile"/>
+            <Button Text="Write File" Clicked="OnWriteFile"/>
 
-            <!-- Output Display -->
-            <Editor x:Name="OutputEditor"
-                    HeightRequest="300"
-                    IsReadOnly="True"
-                    BackgroundColor="LightGray" />
+            <!-- Button to Start Monitoring Resources -->
+            <Button Text="Start Monitoring" Clicked="OnStartMonitoring"/>
+
+            <!-- Output editor for showing logs -->
+            <Editor x:Name="OutputEditor" AutoSize="TextChanges" HeightRequest="200"/>
+
+            <!-- Memory and Resource Usage -->
+            <Label x:Name="MemoryStatusLabel" Text="Memory: Unallocated" />
+            <Label x:Name="CpuUsageLabel" Text="CPU Usage: 0%" />
+            <Label x:Name="MemoryUsageLabel" Text="Memory Usage: 0%" />
+            <Label x:Name="FileStatusLabel" Text="File Operations: None" />
         </VerticalStackLayout>
     </ScrollView>
 

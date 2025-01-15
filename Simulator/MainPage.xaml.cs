@@ -1,52 +1,108 @@
 ﻿using System;
+using System.Collections.Generic;
 using Microsoft.Maui.Controls;
+using System.Diagnostics;
+using System.Threading.Tasks;
 
 namespace Simulator
 {
     public partial class MainPage : ContentPage
     {
+        private List<bool> memoryPages;
+        private Dictionary<string, string> fileSystem;
+        private Random random;
+        private List<string> processQueue;
+        private List<string> logHistory;
+
         public MainPage()
         {
             InitializeComponent();
+            memoryPages = new List<bool>(new bool[10]); // Simulated Memory
+            fileSystem = new Dictionary<string, string>();
+            random = new Random();
+            processQueue = new List<string>();
+            logHistory = new List<string>();
         }
 
-        private void OnSimulateProcessManagement(object sender, EventArgs e)
+        private void Log(string message)
         {
-            string os = OsPicker.SelectedItem?.ToString() ?? "None";
-            string result = $"[Process Management] Simulating for {os}\n";
-            result += "Process Created: PID 101\n";
-            result += "Process Scheduled: PID 101\n";
-            result += "Process Terminated: PID 101\n";
-            OutputEditor.Text = result;
+            logHistory.Add(message);
+            OutputEditor.Text += message + "\n";
         }
 
-        private void OnSimulateMemoryManagement(object sender, EventArgs e)
+        private async void OnSimulateProcessClick(object sender, EventArgs e)
         {
-            string os = OsPicker.SelectedItem?.ToString() ?? "None";
-            string result = $"[Memory Management] Simulating for {os}\n";
-            result += "Allocating 4KB of memory\n";
-            result += "Memory Paging Enabled\n";
-            result += "Segmentation Enabled\n";
-            OutputEditor.Text = result;
+            string os = OsPicker.SelectedItem?.ToString() ?? "Unknown OS";
+            string priority = PriorityPicker.SelectedItem?.ToString() ?? "Medium";
+
+            string processId = Guid.NewGuid().ToString().Substring(0, 5);
+            processQueue.Add(processId);
+            Log($"Process {processId} created on {os} with {priority} priority.");
+            await SimulateCPUExecution(processId);
         }
 
-        private void OnSimulateFileManagement(object sender, EventArgs e)
+        private async Task SimulateCPUExecution(string processId)
         {
-            string os = OsPicker.SelectedItem?.ToString() ?? "None";
-            string result = $"[File Management] Simulating for {os}\n";
-            result += "File Created: 'example.txt'\n";
-            result += "File Written: 'example.txt'\n";
-            result += "File Deleted: 'example.txt'\n";
-            OutputEditor.Text = result;
+            Log($"Scheduling process {processId}...");
+            await Task.Delay(1000);
+            Log($"Process {processId} executed.");
+            processQueue.Remove(processId);
         }
 
-        private void OnSimulateIOManagement(object sender, EventArgs e)
+        private void OnSimulateMemoryAllocation(object sender, EventArgs e)
         {
-            string os = OsPicker.SelectedItem?.ToString() ?? "None";
-            string result = $"[I/O Management] Simulating for {os}\n";
-            result += "Input Device: Keyboard\n";
-            result += "Output Device: Screen\n";
-            OutputEditor.Text = result;
+            int allocatedPages = 0;
+            for (int i = 0; i < memoryPages.Count; i++)
+            {
+                if (!memoryPages[i] && random.NextDouble() > 0.5)
+                {
+                    memoryPages[i] = true;
+                    allocatedPages++;
+                }
+            }
+            MemoryStatusLabel.Text = $"Allocated {allocatedPages} pages.";
+            Log($"Memory allocated: {allocatedPages} pages.");
+        }
+
+        private void OnCreateFile(object sender, EventArgs e)
+        {
+            string fileName = "example.txt";
+            if (!fileSystem.ContainsKey(fileName))
+            {
+                fileSystem[fileName] = "";
+                Log($"File {fileName} created.");
+            }
+        }
+
+        private void OnReadFile(object sender, EventArgs e)
+        {
+            string fileName = "example.txt";
+            if (fileSystem.ContainsKey(fileName))
+            {
+                Log($"Reading file {fileName}: {fileSystem[fileName]}");
+            }
+        }
+
+        private void OnWriteFile(object sender, EventArgs e)
+        {
+            string fileName = "example.txt";
+            if (fileSystem.ContainsKey(fileName))
+            {
+                fileSystem[fileName] = "Sample content.";
+                Log($"Writing to file {fileName}.");
+            }
+        }
+
+        private void OnStartMonitoring(object sender, EventArgs e)
+        {
+            Dispatcher.StartTimer(TimeSpan.FromSeconds(1), () =>
+            {
+                int cpuUsage = random.Next(0, 100);
+                int memoryUsage = random.Next(0, 100);
+                CpuUsageLabel.Text = $"CPU: {cpuUsage}%";
+                MemoryUsageLabel.Text = $"Memory: {memoryUsage}%";
+                return true;
+            });
         }
     }
 }
