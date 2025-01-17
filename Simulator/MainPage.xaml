@@ -3,10 +3,19 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Simulator.MainPage">
 
-    <ScrollView>
-        <VerticalStackLayout Padding="30,0" Spacing="25">
+    <Grid Padding="30,0" RowSpacing="0" ColumnSpacing="0">
+        <!-- Define Grid Rows -->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <!-- Main Content -->
+            <RowDefinition Height="*"/>
+            <!-- Scrollable Content -->
+            <RowDefinition Height="Auto"/>
+            <!-- Taskbar -->
+        </Grid.RowDefinitions>
 
-            <!-- Main Area: App Icons Grid -->
+        <!-- Main Area: App Icons Grid (Scrollable) -->
+        <ScrollView Grid.Row="1">
             <Grid ColumnSpacing="15" RowSpacing="15" HorizontalOptions="FillAndExpand">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
@@ -24,35 +33,64 @@
                 <!-- App Icon 2 -->
                 <Button Grid.Row="0" Grid.Column="1" Text="Browser" BackgroundColor="#444" TextColor="White" />
                 <!-- App Icon 3 -->
-                <Button Grid.Row="0" Grid.Column="2" Text="Media Player" BackgroundColor="#444" TextColor="White" />
+                <Button Grid.Row="0" Grid.Column="2" Text="Messenger" BackgroundColor="#444" TextColor="White" />
 
                 <!-- App Icon 4 -->
-                <Button Grid.Row="1" Grid.Column="0" Text="Documents" BackgroundColor="#444" TextColor="White" />
+                <Button Grid.Row="1" Grid.Column="0" Text="Facebook" BackgroundColor="#444" TextColor="White" />
                 <!-- App Icon 5 -->
                 <Button Grid.Row="1" Grid.Column="1" Text="Music" BackgroundColor="#444" TextColor="White" />
-                <!-- App Icon 6 -->
-                <Button Grid.Row="1" Grid.Column="2" Text="Games" BackgroundColor="#444" TextColor="White" />
             </Grid>
-            <!-- Taskbar Section -->
-            <StackLayout Orientation="Horizontal" BackgroundColor="#CCCCCC" Padding="5" HorizontalOptions="FillAndExpand">
-                <!-- Start Menu Icon -->
-                <Button Text="Start" BackgroundColor="#444" TextColor="White" HorizontalOptions="Start" />
+        </ScrollView>
 
-                <!-- Pinned Apps Section -->
-                <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
-                    <Button Text="File Explorer" BackgroundColor="#444" TextColor="White" />
-                    <Button Text="Task Manager" BackgroundColor="#444" TextColor="White" />
-                    <Button Text="Settings" BackgroundColor="#444" TextColor="White" />
-                </StackLayout>
+        <!-- Taskbar Section at the Bottom -->
+        <StackLayout Grid.Row="2" Orientation="Horizontal" BackgroundColor="#CCCCCC" Padding="5" HorizontalOptions="FillAndExpand" HeightRequest="40">
+    <!-- Start Menu Icon -->
+    <Button x:Name="ButtonStart" HorizontalOptions="Start" BackgroundColor="Transparent">
+        <Button.ImageSource>
+            <FileImageSource File="power.png" />
+        </Button.ImageSource>
+                <Button.WidthRequest>60</Button.WidthRequest>
+                <Button.HeightRequest>60</Button.HeightRequest>
+    </Button>
 
-                <!-- System Tray Section (Clock, Battery, Wi-Fi) -->
-                <StackLayout Orientation="Horizontal" HorizontalOptions="EndAndExpand">
-                    <Label Text="12:30 PM" TextColor="White" VerticalOptions="Center" />
-                    <Label Text="Wi-Fi" TextColor="White" VerticalOptions="Center" Margin="10,0" />
-                    <Label Text="Battery 75%" TextColor="White" VerticalOptions="Center" />
-                </StackLayout>
+    <!-- Pinned Apps Section -->
+            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                <!-- File Explorer Button with Icon -->
+                <Button x:Name="ButtonFileExplorer" BackgroundColor="Transparent">
+                    <Button.ImageSource>
+                        <FileImageSource File="app.png" />
+                    </Button.ImageSource>
+                    <Button.WidthRequest>60</Button.WidthRequest>
+                    <Button.HeightRequest>60</Button.HeightRequest>
+                </Button>
+
+                <!-- Task Manager Button with Icon -->
+                <Button x:Name="ButtonTaskManager" BackgroundColor="Transparent">
+                    <Button.ImageSource>
+                        <FileImageSource File="taskmanager.png" />
+                    </Button.ImageSource>
+                    <Button.WidthRequest>60</Button.WidthRequest>
+                    <Button.HeightRequest>60</Button.HeightRequest>
+                </Button>
+
+                <!-- Settings Button with Icon -->
+                <Button x:Name="ButtonSettings" BackgroundColor="Transparent">
+                    <Button.ImageSource>
+                        <FileImageSource File="settings.png" />
+                    </Button.ImageSource>
+                    <Button.WidthRequest>60</Button.WidthRequest>
+                    <Button.HeightRequest>60</Button.HeightRequest>
+                </Button>
             </StackLayout>
 
-        </VerticalStackLayout>
-    </ScrollView>
+
+            <!-- System Tray Section (Clock, Battery, Wi-Fi) -->
+            <StackLayout Orientation="Horizontal" HorizontalOptions="EndAndExpand">
+                <Label Text="12:30 PM" TextColor="Black" VerticalOptions="Center" />
+                <Label Text="Wi-Fi" TextColor="Black" VerticalOptions="Center" Margin="10,0" />
+                <Label Text="Battery 75%" TextColor="Black" VerticalOptions="Center" />
+            </StackLayout>
+        </StackLayout>
+    </Grid>
+
 </ContentPage>
