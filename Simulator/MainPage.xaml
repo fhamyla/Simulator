@@ -6,26 +6,6 @@
     <ScrollView>
         <VerticalStackLayout Padding="30,0" Spacing="25">
 
-            <!-- Taskbar Section -->
-            <StackLayout Orientation="Horizontal" BackgroundColor="#333" Padding="5" HorizontalOptions="FillAndExpand">
-                <!-- Start Menu Icon -->
-                <Button Text="Start" BackgroundColor="#444" TextColor="White" HorizontalOptions="Start" />
-
-                <!-- Pinned Apps Section -->
-                <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
-                    <Button Text="File Explorer" BackgroundColor="#444" TextColor="White" />
-                    <Button Text="Task Manager" BackgroundColor="#444" TextColor="White" />
-                    <Button Text="Settings" BackgroundColor="#444" TextColor="White" />
-                </StackLayout>
-
-                <!-- System Tray Section (Clock, Battery, Wi-Fi) -->
-                <StackLayout Orientation="Horizontal" HorizontalOptions="EndAndExpand">
-                    <Label Text="12:30 PM" TextColor="White" VerticalOptions="Center" />
-                    <Label Text="Wi-Fi" TextColor="White" VerticalOptions="Center" Margin="10,0" />
-                    <Label Text="Battery 75%" TextColor="White" VerticalOptions="Center" />
-                </StackLayout>
-            </StackLayout>
-
             <!-- Main Area: App Icons Grid -->
             <Grid ColumnSpacing="15" RowSpacing="15" HorizontalOptions="FillAndExpand">
                 <Grid.RowDefinitions>
@@ -53,6 +33,25 @@
                 <!-- App Icon 6 -->
                 <Button Grid.Row="1" Grid.Column="2" Text="Games" BackgroundColor="#444" TextColor="White" />
             </Grid>
+            <!-- Taskbar Section -->
+            <StackLayout Orientation="Horizontal" BackgroundColor="#CCCCCC" Padding="5" HorizontalOptions="FillAndExpand">
+                <!-- Start Menu Icon -->
+                <Button Text="Start" BackgroundColor="#444" TextColor="White" HorizontalOptions="Start" />
+
+                <!-- Pinned Apps Section -->
+                <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                    <Button Text="File Explorer" BackgroundColor="#444" TextColor="White" />
+                    <Button Text="Task Manager" BackgroundColor="#444" TextColor="White" />
+                    <Button Text="Settings" BackgroundColor="#444" TextColor="White" />
+                </StackLayout>
+
+                <!-- System Tray Section (Clock, Battery, Wi-Fi) -->
+                <StackLayout Orientation="Horizontal" HorizontalOptions="EndAndExpand">
+                    <Label Text="12:30 PM" TextColor="White" VerticalOptions="Center" />
+                    <Label Text="Wi-Fi" TextColor="White" VerticalOptions="Center" Margin="10,0" />
+                    <Label Text="Battery 75%" TextColor="White" VerticalOptions="Center" />
+                </StackLayout>
+            </StackLayout>
 
         </VerticalStackLayout>
     </ScrollView>

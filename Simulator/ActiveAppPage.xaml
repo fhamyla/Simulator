@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Simulator.ActiveAppPage">
+
+    <Grid Padding="10">
+        <!-- Window Frame -->
+        <Frame BorderColor="#888" CornerRadius="10" Padding="0" BackgroundColor="White">
+
+            <!-- Title Bar -->
+            <Grid HeightRequest="40" BackgroundColor="#333" Padding="10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <!-- Title Text -->
+                <Label Text="File Explorer" FontSize="Medium" TextColor="White" VerticalOptions="Center" Grid.Column="0"/>
+
+                <!-- Minimize Button -->
+                <Button Text="−" BackgroundColor="#444" TextColor="White" VerticalOptions="Center" WidthRequest="40" HeightRequest="40" Grid.Column="1"/>
+
+                <!-- Maximize Button -->
+                <Button Text="□" BackgroundColor="#444" TextColor="White" VerticalOptions="Center" WidthRequest="40" HeightRequest="40" Grid.Column="2"/>
+
+                <!-- Close Button -->
+                <Button Text="X" BackgroundColor="#444" TextColor="White" VerticalOptions="Center" WidthRequest="40" HeightRequest="40" Grid.Column="3"/>
+            </Grid>
+
+            <!-- Content Area -->
+            <ScrollView Padding="10">
+                <StackLayout Spacing="10">
+                    <!-- Content of the Application Window -->
+                    <Label Text="File1.txt" FontSize="Medium" BackgroundColor="#f4f4f4" Padding="10" />
+                    <Label Text="Music.mp3" FontSize="Medium" BackgroundColor="#f4f4f4" Padding="10" />
+                    <Label Text="Image.jpg" FontSize="Medium" BackgroundColor="#f4f4f4" Padding="10" />
+                    <Label Text="App.exe" FontSize="Medium" BackgroundColor="#f4f4f4" Padding="10" />
+                </StackLayout>
+            </ScrollView>
+
+        </Frame>
+    </Grid>
+
+</ContentPage>
