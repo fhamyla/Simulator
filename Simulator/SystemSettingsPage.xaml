@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Simulator.SystemSettingsPage">
+
+    <Grid Padding="20">
+        <!-- Sidebar for Settings Categories -->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- Sidebar -->
+        <StackLayout BackgroundColor="#444" Padding="10" Spacing="20" HorizontalOptions="Start">
+            <Button Text="Display" BackgroundColor="#555" TextColor="White" />
+            <Button Text="Network" BackgroundColor="#555" TextColor="White" />
+            <Button Text="Sound" BackgroundColor="#555" TextColor="White" />
+            <Button Text="Privacy" BackgroundColor="#555" TextColor="White" />
+            <Button Text="Power Options" BackgroundColor="#555" TextColor="White" />
+        </StackLayout>
+
+        <!-- Settings Options Area -->
+        <StackLayout Grid.Column="1" Padding="20" Spacing="20">
+
+            <!-- Display Settings -->
+            <StackLayout x:Name="DisplaySettings" IsVisible="True">
+                <Label Text="Brightness" FontSize="Medium" />
+                <Slider Minimum="0" Maximum="100" Value="70" />
+                <Label Text="Resolution" FontSize="Medium" />
+                <Picker>
+                    <Picker.Items>
+                        <x:String>1920x1080</x:String>
+                        <x:String>1280x720</x:String>
+                        <x:String>1024x768</x:String>
+                    </Picker.Items>
+                </Picker>
+            </StackLayout>
+
+            <!-- Network Settings -->
+            <StackLayout x:Name="NetworkSettings" IsVisible="False">
+                <Label Text="Wi-Fi" FontSize="Medium" />
+                <Switch IsToggled="True" />
+                <Label Text="Bluetooth" FontSize="Medium" />
+                <Switch IsToggled="True" />
+            </StackLayout>
+
+            <!-- Sound Settings -->
+            <StackLayout x:Name="SoundSettings" IsVisible="False">
+                <Label Text="Volume" FontSize="Medium" />
+                <Slider Minimum="0" Maximum="100" Value="50" />
+                <Label Text="Mute" FontSize="Medium" />
+                <Switch IsToggled="False" />
+            </StackLayout>
+
+            <!-- Privacy Settings -->
+            <StackLayout x:Name="PrivacySettings" IsVisible="False">
+                <Label Text="Location Access" FontSize="Medium" />
+                <Switch IsToggled="True" />
+                <Label Text="Camera Access" FontSize="Medium" />
+                <Switch IsToggled="False" />
+            </StackLayout>
+
+            <!-- Power Options -->
+            <StackLayout x:Name="PowerOptions" IsVisible="False">
+                <Label Text="Battery Saver" FontSize="Medium" />
+                <Switch IsToggled="True" />
+                <Label Text="Sleep Timer" FontSize="Medium" />
+                <Slider Minimum="0" Maximum="60" Value="15" />
+            </StackLayout>
+
+        </StackLayout>
+    </Grid>
+
+</ContentPage>

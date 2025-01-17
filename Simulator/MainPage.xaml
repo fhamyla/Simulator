@@ -14,7 +14,7 @@
                 <!-- Pinned Apps Section -->
                 <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
                     <Button Text="File Explorer" BackgroundColor="#444" TextColor="White" />
-                    <Button Text="Terminal" BackgroundColor="#444" TextColor="White" />
+                    <Button Text="Task Manager" BackgroundColor="#444" TextColor="White" />
                     <Button Text="Settings" BackgroundColor="#444" TextColor="White" />
                 </StackLayout>
 

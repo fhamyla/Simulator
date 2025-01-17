@@ -12,8 +12,6 @@ namespace Simulator
         public MainPage()
         {
             InitializeComponent();
-            
         }
-
     }
 }
