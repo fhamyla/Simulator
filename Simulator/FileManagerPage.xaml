@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Simulator.FileManagerPage">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20,0" Spacing="20">
+
+            <!-- Navigation Bar -->
+            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Padding="10">
+                <!-- Back Button -->
+                <Button Text="Back" BackgroundColor="#444" TextColor="White" HorizontalOptions="Start" />
+
+                <!-- Forward Button -->
+                <Button Text="Forward" BackgroundColor="#444" TextColor="White" HorizontalOptions="Start" />
+
+                <!-- Up Button -->
+                <Button Text="Up" BackgroundColor="#444" TextColor="White" HorizontalOptions="Start" />
+
+                <!-- Path -->
+                <Label Text="C:\Users\YourName\Documents" TextColor="Black" VerticalOptions="Center" HorizontalOptions="FillAndExpand" />
+
+            </StackLayout>
+
+            <!-- File View Area -->
+            <Grid ColumnSpacing="15" RowSpacing="15" HorizontalOptions="FillAndExpand">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <!-- Files & Folders -->
+                <Button Grid.Row="0" Grid.Column="0" Text="Documents" BackgroundColor="#444" TextColor="White" />
+                <Button Grid.Row="0" Grid.Column="1" Text="Pictures" BackgroundColor="#444" TextColor="White" />
+                <Button Grid.Row="1" Grid.Column="0" Text="Downloads" BackgroundColor="#444" TextColor="White" />
+                <Button Grid.Row="1" Grid.Column="1" Text="Videos" BackgroundColor="#444" TextColor="White" />
+                <Button Grid.Row="2" Grid.Column="0" Text="File1.txt" BackgroundColor="#444" TextColor="White" />
+                <Button Grid.Row="2" Grid.Column="1" Text="Music.mp3" BackgroundColor="#444" TextColor="White" />
+                <Button Grid.Row="3" Grid.Column="0" Text="Image.jpg" BackgroundColor="#444" TextColor="White" />
+                <Button Grid.Row="3" Grid.Column="1" Text="App.exe" BackgroundColor="#444" TextColor="White" />
+            </Grid>
+
+            <!-- Action Buttons -->
+            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Padding="10">
+                <!-- New Folder Button -->
+                <Button Text="New Folder" BackgroundColor="#444" TextColor="White" HorizontalOptions="Start" />
+
+                <!-- Delete Button -->
+                <Button Text="Delete" BackgroundColor="#444" TextColor="White" HorizontalOptions="Start" />
+
+                <!-- Rename Button -->
+                <Button Text="Rename" BackgroundColor="#444" TextColor="White" HorizontalOptions="Start" />
+
+                <!-- Search Button -->
+                <Button Text="Search" BackgroundColor="#444" TextColor="White" HorizontalOptions="EndAndExpand" />
+            </StackLayout>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
