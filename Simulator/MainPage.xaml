@@ -6,47 +6,54 @@
     <ScrollView>
         <VerticalStackLayout Padding="30,0" Spacing="25">
 
-            <!-- OS Picker -->
-            <Picker x:Name="OsPicker">
-                <Picker.Items>
-                    <x:String>Windows</x:String>
-                    <x:String>Android</x:String>
-                    <x:String>iOS</x:String>
-                </Picker.Items>
-            </Picker>
+            <!-- Taskbar Section -->
+            <StackLayout Orientation="Horizontal" BackgroundColor="#333" Padding="5" HorizontalOptions="FillAndExpand">
+                <!-- Start Menu Icon -->
+                <Button Text="Start" BackgroundColor="#444" TextColor="White" HorizontalOptions="Start" />
 
-            <!-- Priority Picker -->
-            <Picker x:Name="PriorityPicker" Title="Select Process Priority">
-                <Picker.Items>
-                    <x:String>Low</x:String>
-                    <x:String>Medium</x:String>
-                    <x:String>High</x:String>
-                </Picker.Items>
-            </Picker>
+                <!-- Pinned Apps Section -->
+                <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                    <Button Text="File Explorer" BackgroundColor="#444" TextColor="White" />
+                    <Button Text="Terminal" BackgroundColor="#444" TextColor="White" />
+                    <Button Text="Settings" BackgroundColor="#444" TextColor="White" />
+                </StackLayout>
 
-            <!-- Button to Simulate Process Creation -->
-            <Button Text="Simulate Process Creation" Clicked="OnSimulateProcessClick"/>
+                <!-- System Tray Section (Clock, Battery, Wi-Fi) -->
+                <StackLayout Orientation="Horizontal" HorizontalOptions="EndAndExpand">
+                    <Label Text="12:30 PM" TextColor="White" VerticalOptions="Center" />
+                    <Label Text="Wi-Fi" TextColor="White" VerticalOptions="Center" Margin="10,0" />
+                    <Label Text="Battery 75%" TextColor="White" VerticalOptions="Center" />
+                </StackLayout>
+            </StackLayout>
 
-            <!-- Button to Simulate Memory Allocation -->
-            <Button Text="Simulate Memory Allocation" Clicked="OnSimulateMemoryAllocation"/>
+            <!-- Main Area: App Icons Grid -->
+            <Grid ColumnSpacing="15" RowSpacing="15" HorizontalOptions="FillAndExpand">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
 
-            <!-- Button for File Operations -->
-            <Button Text="Create File" Clicked="OnCreateFile"/>
-            <Button Text="Read File" Clicked="OnReadFile"/>
-            <Button Text="Write File" Clicked="OnWriteFile"/>
+                <!-- App Icon 1 -->
+                <Button Grid.Row="0" Grid.Column="0" Text="File Explorer" BackgroundColor="#444" TextColor="White" />
+                <!-- App Icon 2 -->
+                <Button Grid.Row="0" Grid.Column="1" Text="Browser" BackgroundColor="#444" TextColor="White" />
+                <!-- App Icon 3 -->
+                <Button Grid.Row="0" Grid.Column="2" Text="Media Player" BackgroundColor="#444" TextColor="White" />
 
-            <!-- Button to Start Monitoring Resources -->
-            <Button Text="Start Monitoring" Clicked="OnStartMonitoring"/>
+                <!-- App Icon 4 -->
+                <Button Grid.Row="1" Grid.Column="0" Text="Documents" BackgroundColor="#444" TextColor="White" />
+                <!-- App Icon 5 -->
+                <Button Grid.Row="1" Grid.Column="1" Text="Music" BackgroundColor="#444" TextColor="White" />
+                <!-- App Icon 6 -->
+                <Button Grid.Row="1" Grid.Column="2" Text="Games" BackgroundColor="#444" TextColor="White" />
+            </Grid>
 
-            <!-- Output editor for showing logs -->
-            <Editor x:Name="OutputEditor" AutoSize="TextChanges" HeightRequest="200"/>
-
-            <!-- Memory and Resource Usage -->
-            <Label x:Name="MemoryStatusLabel" Text="Memory: Unallocated" />
-            <Label x:Name="CpuUsageLabel" Text="CPU Usage: 0%" />
-            <Label x:Name="MemoryUsageLabel" Text="Memory Usage: 0%" />
-            <Label x:Name="FileStatusLabel" Text="File Operations: None" />
         </VerticalStackLayout>
     </ScrollView>
-
 </ContentPage>
