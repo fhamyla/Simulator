@@ -14,7 +14,7 @@
             </VerticalStackLayout>
 
             <VerticalStackLayout Grid.Row="1" Grid.Column="0" VerticalOptions="Start" HorizontalOptions="Start" Margin="15">
-                <Image Source="browser.png" WidthRequest="40" HeightRequest="40" />
+                <Image Source="google.png" WidthRequest="40" HeightRequest="40" />
                 <Label Text="Google" HorizontalTextAlignment="Center" FontFamily="CustomFont" FontSize="12" />
             </VerticalStackLayout>
 

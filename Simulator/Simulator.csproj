@@ -60,7 +60,9 @@
 	  <None Remove="Resources\Images\app.png" />
 	  <None Remove="Resources\Images\browser.png" />
 	  <None Remove="Resources\Images\facebook.png" />
+	  <None Remove="Resources\Images\google.png" />
 	  <None Remove="Resources\Images\messenger.png" />
+	  <None Remove="Resources\Images\music.png" />
 	  <None Remove="Resources\Images\power.png" />
 	  <None Remove="Resources\Images\recyclebin.png" />
 	  <None Remove="Resources\Images\settings.png" />
