@@ -58,9 +58,14 @@
 
 	<ItemGroup>
 	  <None Remove="Resources\Images\app.png" />
+	  <None Remove="Resources\Images\browser.png" />
+	  <None Remove="Resources\Images\facebook.png" />
+	  <None Remove="Resources\Images\messenger.png" />
 	  <None Remove="Resources\Images\power.png" />
+	  <None Remove="Resources\Images\recyclebin.png" />
 	  <None Remove="Resources\Images\settings.png" />
 	  <None Remove="Resources\Images\taskmanager.png" />
+	  <None Remove="Resources\Images\wallpaper.png" />
 	</ItemGroup>
 
 	<ItemGroup>

@@ -2,95 +2,110 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Simulator.MainPage">
+    <Grid>
+        <!-- Background Wallpaper -->
+        <Image x:Name="Wallpaper" Source="wallpaper.png" Aspect="AspectFill" />
+        
+        <Grid Padding="20" ColumnDefinitions="Auto,Auto" RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto">
+            <!-- Column 1 -->
+            <VerticalStackLayout Grid.Row="0" Grid.Column="0" VerticalOptions="Start" HorizontalOptions="Start" Margin="15">
+                <Image Source="recyclebin.png" WidthRequest="40" HeightRequest="40" />
+                <Label Text="Recycle Bin" HorizontalTextAlignment="Center" FontFamily="CustomFont" FontSize="12" />
+            </VerticalStackLayout>
 
-    <Grid Padding="30,0" RowSpacing="0" ColumnSpacing="0">
-        <!-- Define Grid Rows -->
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <!-- Main Content -->
-            <RowDefinition Height="*"/>
-            <!-- Scrollable Content -->
-            <RowDefinition Height="Auto"/>
-            <!-- Taskbar -->
-        </Grid.RowDefinitions>
+            <VerticalStackLayout Grid.Row="1" Grid.Column="0" VerticalOptions="Start" HorizontalOptions="Start" Margin="15">
+                <Image Source="browser.png" WidthRequest="40" HeightRequest="40" />
+                <Label Text="Google" HorizontalTextAlignment="Center" FontFamily="CustomFont" FontSize="12" />
+            </VerticalStackLayout>
 
-        <!-- Main Area: App Icons Grid (Scrollable) -->
-        <ScrollView Grid.Row="1">
-            <Grid ColumnSpacing="15" RowSpacing="15" HorizontalOptions="FillAndExpand">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
+            <VerticalStackLayout Grid.Row="2" Grid.Column="0" VerticalOptions="Start" HorizontalOptions="Start" Margin="15">
+                <Image Source="browser.png" WidthRequest="40" HeightRequest="40" />
+                <Label Text="Browser" HorizontalTextAlignment="Center" FontFamily="CustomFont" FontSize="12" />
+            </VerticalStackLayout>
 
-                <!-- App Icon 1 -->
-                <Button Grid.Row="0" Grid.Column="0" Text="File Explorer" BackgroundColor="#444" TextColor="White" />
-                <!-- App Icon 2 -->
-                <Button Grid.Row="0" Grid.Column="1" Text="Browser" BackgroundColor="#444" TextColor="White" />
-                <!-- App Icon 3 -->
-                <Button Grid.Row="0" Grid.Column="2" Text="Messenger" BackgroundColor="#444" TextColor="White" />
+            <VerticalStackLayout Grid.Row="3" Grid.Column="0" VerticalOptions="Start" HorizontalOptions="Start" Margin="15">
+                <Image Source="music.png" WidthRequest="40" HeightRequest="40" />
+                <Label Text="Music" HorizontalTextAlignment="Center" FontFamily="CustomFont" FontSize="12" />
+            </VerticalStackLayout>
 
-                <!-- App Icon 4 -->
-                <Button Grid.Row="1" Grid.Column="0" Text="Facebook" BackgroundColor="#444" TextColor="White" />
-                <!-- App Icon 5 -->
-                <Button Grid.Row="1" Grid.Column="1" Text="Music" BackgroundColor="#444" TextColor="White" />
-            </Grid>
-        </ScrollView>
+            <VerticalStackLayout Grid.Row="4" Grid.Column="0" VerticalOptions="Start" HorizontalOptions="Start" Margin="15">
+                <Image Source="settings.png" WidthRequest="40" HeightRequest="40" />
+                <Label Text="Zoom" HorizontalTextAlignment="Center" FontFamily="CustomFont" FontSize="12" />
+            </VerticalStackLayout>
+
+            <VerticalStackLayout Grid.Row="5" Grid.Column="0" VerticalOptions="Start" HorizontalOptions="Start" Margin="15">
+                <Image Source="photos.png" WidthRequest="40" HeightRequest="40" />
+                <Label Text="Photos" HorizontalTextAlignment="Center" FontFamily="CustomFont" FontSize="12" />
+            </VerticalStackLayout>
+
+            <VerticalStackLayout Grid.Row="6" Grid.Column="0" VerticalOptions="Start" HorizontalOptions="Start" Margin="15">
+                <Image Source="camera.png" WidthRequest="40" HeightRequest="40" />
+                <Label Text="Camera" HorizontalTextAlignment="Center" FontFamily="CustomFont" FontSize="12" />
+            </VerticalStackLayout>
+
+            <!-- Column 2 -->
+            <VerticalStackLayout Grid.Row="0" Grid.Column="1" VerticalOptions="Start" HorizontalOptions="Start" Margin="15">
+                <Image Source="downloads.png" WidthRequest="40" HeightRequest="40" />
+                <Label Text="Downloads" HorizontalTextAlignment="Center" FontFamily="CustomFont" FontSize="12" />
+            </VerticalStackLayout>
+
+            <VerticalStackLayout Grid.Row="1" Grid.Column="1" VerticalOptions="Start" HorizontalOptions="Start" Margin="15">
+                <Image Source="videos.png" WidthRequest="40" HeightRequest="40" />
+                <Label Text="Videos" HorizontalTextAlignment="Center" FontFamily="CustomFont" FontSize="12" />
+            </VerticalStackLayout>
+
+            <VerticalStackLayout Grid.Row="2" Grid.Column="1" VerticalOptions="Start" HorizontalOptions="Start" Margin="15">
+                <Image Source="notes.png" WidthRequest="40" HeightRequest="40" />
+                <Label Text="Notes" HorizontalTextAlignment="Center" FontFamily="CustomFont" FontSize="12" />
+            </VerticalStackLayout>
+
+            <VerticalStackLayout Grid.Row="3" Grid.Column="1" VerticalOptions="Start" HorizontalOptions="Start" Margin="15">
+                <Image Source="email.png" WidthRequest="40" HeightRequest="40" />
+                <Label Text="Email" HorizontalTextAlignment="Center" FontFamily="CustomFont" FontSize="12" />
+            </VerticalStackLayout>
+        </Grid>
 
         <!-- Taskbar Section at the Bottom -->
-        <StackLayout Grid.Row="2" Orientation="Horizontal" BackgroundColor="#CCCCCC" Padding="5" HorizontalOptions="FillAndExpand" HeightRequest="40">
-    <!-- Start Menu Icon -->
-    <Button x:Name="ButtonStart" HorizontalOptions="Start" BackgroundColor="Transparent">
-        <Button.ImageSource>
-            <FileImageSource File="power.png" />
-        </Button.ImageSource>
-                <Button.WidthRequest>60</Button.WidthRequest>
-                <Button.HeightRequest>60</Button.HeightRequest>
-    </Button>
+        <Grid VerticalOptions="End" BackgroundColor="#CCCCCC" HeightRequest="50">
+            <!-- Define Columns for Taskbar Layout -->
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
 
-    <!-- Pinned Apps Section -->
-            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
-                <!-- File Explorer Button with Icon -->
-                <Button x:Name="ButtonFileExplorer" BackgroundColor="Transparent">
+            <!-- Start Button -->
+            <Button Grid.Column="0" HorizontalOptions="Start" BackgroundColor="Transparent">
+                <Button.ImageSource>
+                    <FileImageSource File="power.png" />
+                </Button.ImageSource>
+            </Button>
+
+            <!-- Center Pinned Apps -->
+            <StackLayout Grid.Column="1" Orientation="Horizontal" HorizontalOptions="Center" Spacing="10">
+                <Button BackgroundColor="Transparent">
                     <Button.ImageSource>
                         <FileImageSource File="app.png" />
                     </Button.ImageSource>
-                    <Button.WidthRequest>60</Button.WidthRequest>
-                    <Button.HeightRequest>60</Button.HeightRequest>
                 </Button>
-
-                <!-- Task Manager Button with Icon -->
-                <Button x:Name="ButtonTaskManager" BackgroundColor="Transparent">
+                <Button BackgroundColor="Transparent">
                     <Button.ImageSource>
                         <FileImageSource File="taskmanager.png" />
                     </Button.ImageSource>
-                    <Button.WidthRequest>60</Button.WidthRequest>
-                    <Button.HeightRequest>60</Button.HeightRequest>
                 </Button>
-
-                <!-- Settings Button with Icon -->
-                <Button x:Name="ButtonSettings" BackgroundColor="Transparent">
+                <Button BackgroundColor="Transparent">
                     <Button.ImageSource>
                         <FileImageSource File="settings.png" />
                     </Button.ImageSource>
-                    <Button.WidthRequest>60</Button.WidthRequest>
-                    <Button.HeightRequest>60</Button.HeightRequest>
                 </Button>
             </StackLayout>
 
-
-            <!-- System Tray Section (Clock, Battery, Wi-Fi) -->
-            <StackLayout Orientation="Horizontal" HorizontalOptions="EndAndExpand">
+            <!-- System Tray -->
+            <StackLayout Grid.Column="2" Orientation="Horizontal" HorizontalOptions="End" Padding="10">
                 <Label Text="12:30 PM" TextColor="Black" VerticalOptions="Center" />
                 <Label Text="Wi-Fi" TextColor="Black" VerticalOptions="Center" Margin="10,0" />
                 <Label Text="Battery 75%" TextColor="Black" VerticalOptions="Center" />
             </StackLayout>
-        </StackLayout>
+        </Grid>
     </Grid>
-
 </ContentPage>
