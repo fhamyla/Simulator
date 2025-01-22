@@ -59,15 +59,22 @@
 	<ItemGroup>
 	  <None Remove="Resources\Images\app.png" />
 	  <None Remove="Resources\Images\browser.png" />
+	  <None Remove="Resources\Images\camera.png" />
 	  <None Remove="Resources\Images\facebook.png" />
+	  <None Remove="Resources\Images\gmail.png" />
 	  <None Remove="Resources\Images\google.png" />
+	  <None Remove="Resources\Images\images.png" />
 	  <None Remove="Resources\Images\messenger.png" />
 	  <None Remove="Resources\Images\music.png" />
+	  <None Remove="Resources\Images\openfolder.png" />
+	  <None Remove="Resources\Images\postit.png" />
 	  <None Remove="Resources\Images\power.png" />
 	  <None Remove="Resources\Images\recyclebin.png" />
 	  <None Remove="Resources\Images\settings.png" />
 	  <None Remove="Resources\Images\taskmanager.png" />
 	  <None Remove="Resources\Images\wallpaper.png" />
+	  <None Remove="Resources\Images\youtube.png" />
+	  <None Remove="Resources\Images\zoom.png" />
 	</ItemGroup>
 
 	<ItemGroup>

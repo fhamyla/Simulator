@@ -29,12 +29,12 @@
             </VerticalStackLayout>
 
             <VerticalStackLayout Grid.Row="4" Grid.Column="0" VerticalOptions="Start" HorizontalOptions="Start" Margin="15">
-                <Image Source="settings.png" WidthRequest="40" HeightRequest="40" />
+                <Image Source="zoom.png" WidthRequest="40" HeightRequest="40" />
                 <Label Text="Zoom" HorizontalTextAlignment="Center" FontFamily="CustomFont" FontSize="12" />
             </VerticalStackLayout>
 
             <VerticalStackLayout Grid.Row="5" Grid.Column="0" VerticalOptions="Start" HorizontalOptions="Start" Margin="15">
-                <Image Source="photos.png" WidthRequest="40" HeightRequest="40" />
+                <Image Source="images.png" WidthRequest="40" HeightRequest="40" />
                 <Label Text="Photos" HorizontalTextAlignment="Center" FontFamily="CustomFont" FontSize="12" />
             </VerticalStackLayout>
 
@@ -45,22 +45,22 @@
 
             <!-- Column 2 -->
             <VerticalStackLayout Grid.Row="0" Grid.Column="1" VerticalOptions="Start" HorizontalOptions="Start" Margin="15">
-                <Image Source="downloads.png" WidthRequest="40" HeightRequest="40" />
+                <Image Source="openfolder.png" WidthRequest="40" HeightRequest="40" />
                 <Label Text="Downloads" HorizontalTextAlignment="Center" FontFamily="CustomFont" FontSize="12" />
             </VerticalStackLayout>
 
             <VerticalStackLayout Grid.Row="1" Grid.Column="1" VerticalOptions="Start" HorizontalOptions="Start" Margin="15">
-                <Image Source="videos.png" WidthRequest="40" HeightRequest="40" />
+                <Image Source="youtube.png" WidthRequest="40" HeightRequest="40" />
                 <Label Text="Videos" HorizontalTextAlignment="Center" FontFamily="CustomFont" FontSize="12" />
             </VerticalStackLayout>
 
             <VerticalStackLayout Grid.Row="2" Grid.Column="1" VerticalOptions="Start" HorizontalOptions="Start" Margin="15">
-                <Image Source="notes.png" WidthRequest="40" HeightRequest="40" />
+                <Image Source="postit.png" WidthRequest="40" HeightRequest="40" />
                 <Label Text="Notes" HorizontalTextAlignment="Center" FontFamily="CustomFont" FontSize="12" />
             </VerticalStackLayout>
 
             <VerticalStackLayout Grid.Row="3" Grid.Column="1" VerticalOptions="Start" HorizontalOptions="Start" Margin="15">
-                <Image Source="email.png" WidthRequest="40" HeightRequest="40" />
+                <Image Source="gmail.png" WidthRequest="40" HeightRequest="40" />
                 <Label Text="Email" HorizontalTextAlignment="Center" FontFamily="CustomFont" FontSize="12" />
             </VerticalStackLayout>
         </Grid>
