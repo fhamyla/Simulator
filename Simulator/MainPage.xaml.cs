@@ -28,5 +28,10 @@ namespace Simulator
         {
             Launcher.OpenAsync(new Uri("https://www.microsoft.com/en-us/edge/update/132?ep=925&form=MT00UA&es=173&channel=stable&version=132.0.2957.115&cs=3803538485"));
         }
+
+        private async void OnGoogleButtonTapped(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new GooglePage());
+        }
     }
 }
