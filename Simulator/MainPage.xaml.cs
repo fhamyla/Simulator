@@ -23,5 +23,10 @@ namespace Simulator
                 Wallpaper.Source = ImageSource.FromFile(result.FullPath);
             }
         }
+
+        private void OnMicrosoftButtonTapped(object sender, EventArgs e)
+        {
+            Launcher.OpenAsync(new Uri("https://www.microsoft.com/en-us/edge/update/132?ep=925&form=MT00UA&es=173&channel=stable&version=132.0.2957.115&cs=3803538485"));
+        }
     }
 }
