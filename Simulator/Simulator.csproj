@@ -65,6 +65,7 @@
 	  <None Remove="Resources\Images\google.png" />
 	  <None Remove="Resources\Images\images.png" />
 	  <None Remove="Resources\Images\messenger.png" />
+	  <None Remove="Resources\Images\microsoft.png" />
 	  <None Remove="Resources\Images\music.png" />
 	  <None Remove="Resources\Images\openfolder.png" />
 	  <None Remove="Resources\Images\postit.png" />

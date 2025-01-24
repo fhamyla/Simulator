@@ -19,8 +19,8 @@
             </VerticalStackLayout>
 
             <VerticalStackLayout Grid.Row="2" Grid.Column="0" VerticalOptions="Start" HorizontalOptions="Start" Margin="15">
-                <Image Source="browser.png" WidthRequest="40" HeightRequest="40" />
-                <Label Text="Browser" HorizontalTextAlignment="Center" FontFamily="CustomFont" FontSize="12" />
+                <Image Source="microsoft.png" WidthRequest="40" HeightRequest="40" />
+                <Label Text="Microsoft" HorizontalTextAlignment="Center" FontFamily="CustomFont" FontSize="12" />
             </VerticalStackLayout>
 
             <VerticalStackLayout Grid.Row="3" Grid.Column="0" VerticalOptions="Start" HorizontalOptions="Start" Margin="15">
