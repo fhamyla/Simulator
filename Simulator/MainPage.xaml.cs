@@ -53,6 +53,11 @@ namespace Simulator
             await Navigation.PushAsync(new FacebookPage());
         }
 
+        private async void OnYTButtonTapped(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new FacebookPage());
+        }
+
         private async void OnStorageAccessClicked(object sender, EventArgs e)
         {
             try

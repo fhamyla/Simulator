@@ -62,8 +62,11 @@
             </VerticalStackLayout>
 
             <VerticalStackLayout Grid.Row="1" Grid.Column="1" VerticalOptions="Start" HorizontalOptions="Start" Margin="15">
-                <Image Source="youtube.png" WidthRequest="40" HeightRequest="40" />
-                <Label Text="Videos" HorizontalTextAlignment="Center" FontFamily="CustomFont" FontSize="12" />
+                <VerticalStackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnYTButtonTapped" />
+                </VerticalStackLayout.GestureRecognizers>
+                <Image Source="yt.png" WidthRequest="40" HeightRequest="40" />
+                <Label Text="YouTube" HorizontalTextAlignment="Center" FontFamily="CustomFont" FontSize="12" />
             </VerticalStackLayout>
 
             <VerticalStackLayout Grid.Row="2" Grid.Column="1" VerticalOptions="Start" HorizontalOptions="Start" Margin="15">

@@ -75,6 +75,7 @@
 	  <None Remove="Resources\Images\taskmanager.png" />
 	  <None Remove="Resources\Images\wallpaper.png" />
 	  <None Remove="Resources\Images\youtube.png" />
+	  <None Remove="Resources\Images\yt.png" />
 	  <None Remove="Resources\Images\zoom.png" />
 	</ItemGroup>
 
