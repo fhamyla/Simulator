@@ -38,5 +38,10 @@ namespace Simulator
         {
             await Navigation.PushAsync(new ZoomPage());
         }
+
+        private async void OnEmailButtonTapped(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new EmailPage());
+        }
     }
 }

@@ -69,6 +69,9 @@
             </VerticalStackLayout>
 
             <VerticalStackLayout Grid.Row="3" Grid.Column="1" VerticalOptions="Start" HorizontalOptions="Start" Margin="15">
+                <VerticalStackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnEmailButtonTapped" />
+                </VerticalStackLayout.GestureRecognizers>
                 <Image Source="gmail.png" WidthRequest="40" HeightRequest="40" />
                 <Label Text="Email" HorizontalTextAlignment="Center" FontFamily="CustomFont" FontSize="12" />
             </VerticalStackLayout>
