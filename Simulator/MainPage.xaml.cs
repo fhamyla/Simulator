@@ -66,29 +66,69 @@ namespace Simulator
             Launcher.OpenAsync(new Uri("https://www.microsoft.com/en-us/edge/update/132?ep=925&form=MT00UA&es=173&channel=stable&version=132.0.2957.115&cs=3803538485"));
         }
 
-        private async void OnGoogleButtonTapped(object sender, EventArgs e)
+        private void OnGoogleButtonTapped(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new GooglePage());
+            if (Application.Current != null)
+            {
+                var googleWindow = new Simulator.Google();
+                Application.Current.OpenWindow(googleWindow);
+            }
+            else
+            {
+                Console.WriteLine("Application.Current is null. Cannot open the new window.");
+            }
         }
 
-        private async void OnZoomButtonTapped(object sender, EventArgs e)
+        private void OnZoomButtonTapped(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new ZoomPage());
+            if (Application.Current != null)
+            {
+                var zoomWindow = new Simulator.Zoom();
+                Application.Current.OpenWindow(zoomWindow);
+            }
+            else
+            {
+                Console.WriteLine("Application.Current is null. Cannot open the new window.");
+            }
         }
 
-        private async void OnEmailButtonTapped(object sender, EventArgs e)
+        private void OnEmailButtonTapped(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new EmailPage());
+            if (Application.Current != null)
+            {
+                var emailWindow = new Simulator.Email();
+                Application.Current.OpenWindow(emailWindow);
+            }
+            else
+            {
+                Console.WriteLine("Application.Current is null. Cannot open the new window.");
+            }
         }
 
-        private async void OnFacebookButtonTapped(object sender, EventArgs e)
+        private void OnFacebookButtonTapped(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new FacebookPage());
+            if (Application.Current != null)
+            {
+                var facebookWindow = new Simulator.Facebook();
+                Application.Current.OpenWindow(facebookWindow);
+            }
+            else
+            {
+                Console.WriteLine("Application.Current is null. Cannot open the new window.");
+            }
         }
 
-        private async void OnYTButtonTapped(object sender, EventArgs e)
+        private void OnYTButtonTapped(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new YouTubePage());
+            if (Application.Current != null)
+            {
+                var ytWindow = new Simulator.Youtube();
+                Application.Current.OpenWindow(ytWindow);
+            }
+            else
+            {
+                Console.WriteLine("Application.Current is null. Cannot open the new window.");
+            }
         }
 
         private void OnNotesButtonTapped(object sender, EventArgs e)

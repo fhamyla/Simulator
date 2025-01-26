@@ -86,22 +86,22 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiXaml Update="EmailPage.xaml">
+	  <MauiXaml Update="Email.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="FacebookPage.xaml">
+	  <MauiXaml Update="Facebook.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="GooglePage.xaml">
+	  <MauiXaml Update="Google.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Notes.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="YouTubePage.xaml">
+	  <MauiXaml Update="Youtube.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="ZoomPage.xaml">
+	  <MauiXaml Update="Zoom.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>
