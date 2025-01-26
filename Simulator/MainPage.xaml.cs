@@ -15,7 +15,6 @@ namespace Simulator
 
         private async void ChangeWallpaper()
         {
-            // Let user select an image from their device
             var result = await FilePicker.PickAsync(new PickOptions
             {
                 FileTypes = FilePickerFileType.Images,
@@ -62,15 +61,13 @@ namespace Simulator
         {
             try
             {
-                // Open the file picker to access device storage
                 var result = await FilePicker.PickAsync(new PickOptions
                 {
-                    PickerTitle = "Select a file" // No need to specify FileTypes for all files
+                    PickerTitle = "Select a file"
                 });
 
                 if (result != null)
                 {
-                    // Display the picked file information
                     Console.WriteLine($"File picked: {result.FileName}, Path: {result.FullPath}");
                 }
             }
