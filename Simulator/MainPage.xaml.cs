@@ -1,4 +1,8 @@
 ﻿using Microsoft.Maui.Controls;
+using Microsoft.Maui.Controls.PlatformConfiguration;
+using System.Diagnostics;
+using Microsoft.Maui.Devices;
+using Microsoft.Maui.Storage;
 
 namespace Simulator
 {
@@ -42,6 +46,33 @@ namespace Simulator
         private async void OnEmailButtonTapped(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new EmailPage());
+        }
+
+        private async void OnFacebookButtonTapped(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new FacebookPage());
+        }
+
+        private async void OnStorageAccessClicked(object sender, EventArgs e)
+        {
+            try
+            {
+                // Open the file picker to access device storage
+                var result = await FilePicker.PickAsync(new PickOptions
+                {
+                    PickerTitle = "Select a file" // No need to specify FileTypes for all files
+                });
+
+                if (result != null)
+                {
+                    // Display the picked file information
+                    Console.WriteLine($"File picked: {result.FileName}, Path: {result.FullPath}");
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error accessing storage: {ex.Message}");
+            }
         }
     }
 }
