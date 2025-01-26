@@ -5,17 +5,66 @@ using Microsoft.Maui.Devices;
 using Microsoft.Maui.Storage;
 using System.IO;
 using System.Windows.Input;
+using System;
+using System.ComponentModel;
+using System.Timers;
+using Microsoft.Maui.Dispatching;
 
 namespace Simulator
 {
     public partial class MainPage : ContentPage
     {
+        private System.Timers.Timer _timer;
+
         public MainPage()
         {
             InitializeComponent();
+
+            // Initialize and configure the timer
+            _timer = new System.Timers.Timer(60000); // 1-minute interval
+            _timer.Elapsed += (s, e) =>
+            {
+                // Ensure the UI is updated on the main thread
+                Dispatcher.Dispatch(() =>
+                {
+                    UpdateDateTime();
+                    UpdateBatteryStatus();
+                });
+            };
+            _timer.Start();
+
+            // Force an initial update to show the current time and date
+            UpdateDateTime();
+            UpdateBatteryStatus();
         }
 
-        private async void OnMusicTapped(object sender, EventArgs e)
+        private void UpdateDateTime()
+        {
+            // Use the current system time to update labels
+            TimeLabel.Text = DateTime.Now.ToString("h:mm tt");  // e.g., "12:30 PM"
+            DateLabel.Text = DateTime.Now.ToString("M/d/yyyy"); // e.g., "1/27/2025"
+        }
+
+        private void UpdateBatteryStatus()
+        {
+            // Get the battery charge level and display it
+            var batteryLevel = Battery.ChargeLevel * 100; // Convert to percentage
+            BatteryLabel.Text = $"Battery {batteryLevel:0}%"; // e.g., "Battery 75%"
+        }
+
+        protected override void OnDisappearing()
+        {
+            base.OnDisappearing();
+            _timer?.Stop();
+        }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            _timer?.Start();
+        }
+
+    private async void OnMusicTapped(object sender, EventArgs e)
         {
             try
             {

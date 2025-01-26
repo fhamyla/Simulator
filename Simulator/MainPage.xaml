@@ -111,9 +111,9 @@
 
             <!-- System Tray -->
             <StackLayout Grid.Column="2" Orientation="Horizontal" HorizontalOptions="End" Padding="10">
-                <Label Text="12:30 PM" TextColor="Black" VerticalOptions="Center" />
-                <Label Text="Wi-Fi" TextColor="Black" VerticalOptions="Center" Margin="10,0" />
-                <Label Text="Battery 75%" TextColor="Black" VerticalOptions="Center" />
+                <Label x:Name="TimeLabel" Text="Time" TextColor="Black" VerticalOptions="Center" Margin="10,0" />
+                <Label x:Name="DateLabel" Text="Date" TextColor="Black" VerticalOptions="Center" Margin="10,0" />
+                <Label x:Name="BatteryLabel" Text="Battery Status" TextColor="Black" VerticalOptions="Center" />
             </StackLayout>
         </Grid>
     </Grid>
