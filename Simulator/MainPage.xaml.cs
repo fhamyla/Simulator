@@ -3,6 +3,8 @@ using Microsoft.Maui.Controls.PlatformConfiguration;
 using System.Diagnostics;
 using Microsoft.Maui.Devices;
 using Microsoft.Maui.Storage;
+using System.IO;
+using System.Windows.Input;
 
 namespace Simulator
 {
@@ -11,6 +13,70 @@ namespace Simulator
         public MainPage()
         {
             InitializeComponent();
+        }
+
+        private async void OnMusicTapped(object sender, EventArgs e)
+        {
+            try
+            {
+                var downloadsFolder = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "/Downloads";
+
+                var result = await FilePicker.PickAsync(new PickOptions
+                {
+                    PickerTitle = "Select a file",
+                    FileTypes = FilePickerFileType.Images
+                });
+
+                if (result != null)
+                {
+                    var filePath = result.FullPath;
+
+                    if (filePath.StartsWith(downloadsFolder, StringComparison.OrdinalIgnoreCase))
+                    {
+                        Console.WriteLine($"File picked from Downloads: {result.FileName}, Path: {filePath}");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Please select a file from the Downloads folder.");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error accessing storage: {ex.Message}");
+            }
+        }
+
+        private async void OnDownloadsTapped(object sender, EventArgs e)
+        {
+            try
+            {
+                var downloadsFolder = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "/Downloads";
+
+                var result = await FilePicker.PickAsync(new PickOptions
+                {
+                    PickerTitle = "Select a file",
+                    FileTypes = FilePickerFileType.Images
+                });
+
+                if (result != null)
+                {
+                    var filePath = result.FullPath;
+
+                    if (filePath.StartsWith(downloadsFolder, StringComparison.OrdinalIgnoreCase))
+                    {
+                        Console.WriteLine($"File picked from Downloads: {result.FileName}, Path: {filePath}");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Please select a file from the Downloads folder.");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error accessing storage: {ex.Message}");
+            }
         }
 
         private async void ChangeWallpaper()

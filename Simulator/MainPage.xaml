@@ -33,6 +33,9 @@
             </VerticalStackLayout>
 
             <VerticalStackLayout Grid.Row="3" Grid.Column="0" VerticalOptions="Start" HorizontalOptions="Start" Margin="15">
+                <VerticalStackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnMusicTapped" />
+                </VerticalStackLayout.GestureRecognizers>
                 <Image Source="music.png" WidthRequest="40" HeightRequest="40" />
                 <Label Text="Music" HorizontalTextAlignment="Center" FontFamily="CustomFont" FontSize="12" />
             </VerticalStackLayout>
@@ -57,6 +60,9 @@
 
             <!-- Column 2 -->
             <VerticalStackLayout Grid.Row="0" Grid.Column="1" VerticalOptions="Start" HorizontalOptions="Start" Margin="15">
+                <VerticalStackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnDownloadsTapped" />
+                </VerticalStackLayout.GestureRecognizers>
                 <Image Source="openfolder.png" WidthRequest="40" HeightRequest="40" />
                 <Label Text="Downloads" HorizontalTextAlignment="Center" FontFamily="CustomFont" FontSize="12" />
             </VerticalStackLayout>
