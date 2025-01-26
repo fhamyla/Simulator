@@ -48,26 +48,8 @@
                 <Label Text="Zoom" HorizontalTextAlignment="Center" FontFamily="CustomFont" FontSize="12" />
             </VerticalStackLayout>
 
-            <VerticalStackLayout Grid.Row="5" Grid.Column="0" VerticalOptions="Start" HorizontalOptions="Start" Margin="15">
-                <Image Source="images.png" WidthRequest="40" HeightRequest="40" />
-                <Label Text="Photos" HorizontalTextAlignment="Center" FontFamily="CustomFont" FontSize="12" />
-            </VerticalStackLayout>
-
-            <VerticalStackLayout Grid.Row="6" Grid.Column="0" VerticalOptions="Start" HorizontalOptions="Start" Margin="15">
-                <Image Source="camera.png" WidthRequest="40" HeightRequest="40" />
-                <Label Text="Camera" HorizontalTextAlignment="Center" FontFamily="CustomFont" FontSize="12" />
-            </VerticalStackLayout>
-
             <!-- Column 2 -->
             <VerticalStackLayout Grid.Row="0" Grid.Column="1" VerticalOptions="Start" HorizontalOptions="Start" Margin="15">
-                <VerticalStackLayout.GestureRecognizers>
-                    <TapGestureRecognizer Tapped="OnDownloadsTapped" />
-                </VerticalStackLayout.GestureRecognizers>
-                <Image Source="openfolder.png" WidthRequest="40" HeightRequest="40" />
-                <Label Text="Downloads" HorizontalTextAlignment="Center" FontFamily="CustomFont" FontSize="12" />
-            </VerticalStackLayout>
-
-            <VerticalStackLayout Grid.Row="1" Grid.Column="1" VerticalOptions="Start" HorizontalOptions="Start" Margin="15">
                 <VerticalStackLayout.GestureRecognizers>
                     <TapGestureRecognizer Tapped="OnYTButtonTapped" />
                 </VerticalStackLayout.GestureRecognizers>
@@ -75,12 +57,15 @@
                 <Label Text="YouTube" HorizontalTextAlignment="Center" FontFamily="CustomFont" FontSize="12" />
             </VerticalStackLayout>
 
-            <VerticalStackLayout Grid.Row="2" Grid.Column="1" VerticalOptions="Start" HorizontalOptions="Start" Margin="15">
+            <VerticalStackLayout Grid.Row="1" Grid.Column="1" VerticalOptions="Start" HorizontalOptions="Start" Margin="15">
+                <VerticalStackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnNotesButtonTapped" />
+                </VerticalStackLayout.GestureRecognizers>
                 <Image Source="postit.png" WidthRequest="40" HeightRequest="40" />
                 <Label Text="Notes" HorizontalTextAlignment="Center" FontFamily="CustomFont" FontSize="12" />
             </VerticalStackLayout>
-
-            <VerticalStackLayout Grid.Row="3" Grid.Column="1" VerticalOptions="Start" HorizontalOptions="Start" Margin="15">
+            
+            <VerticalStackLayout Grid.Row="2" Grid.Column="1" VerticalOptions="Start" HorizontalOptions="Start" Margin="15">
                 <VerticalStackLayout.GestureRecognizers>
                     <TapGestureRecognizer Tapped="OnEmailButtonTapped" />
                 </VerticalStackLayout.GestureRecognizers>
