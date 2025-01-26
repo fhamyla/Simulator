@@ -33,5 +33,10 @@ namespace Simulator
         {
             await Navigation.PushAsync(new GooglePage());
         }
+
+        private async void OnZoomButtonTapped(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new ZoomPage());
+        }
     }
 }

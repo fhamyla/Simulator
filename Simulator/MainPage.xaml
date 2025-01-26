@@ -35,6 +35,9 @@
             </VerticalStackLayout>
 
             <VerticalStackLayout Grid.Row="4" Grid.Column="0" VerticalOptions="Start" HorizontalOptions="Start" Margin="15">
+                <VerticalStackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnZoomButtonTapped" />
+                </VerticalStackLayout.GestureRecognizers>
                 <Image Source="zoom.png" WidthRequest="40" HeightRequest="40" />
                 <Label Text="Zoom" HorizontalTextAlignment="Center" FontFamily="CustomFont" FontSize="12" />
             </VerticalStackLayout>
