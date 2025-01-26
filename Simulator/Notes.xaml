@@ -10,9 +10,8 @@
                 TextColor="Black"
                 PlaceholderColor="Gray"
                 FontSize="16"
-                HeightRequest="300"
-                VerticalOptions="StartAndExpand" 
-                HorizontalOptions="FillAndExpand"
+                HeightRequest="290"
+                WidthRequest="290"
                 Margin="0,5"/>
         </VerticalStackLayout>
     </ContentPage>
