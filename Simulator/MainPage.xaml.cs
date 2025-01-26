@@ -91,9 +91,17 @@ namespace Simulator
             await Navigation.PushAsync(new YouTubePage());
         }
 
-        private async void OnNotesButtonTapped(object sender, EventArgs e)
+        private void OnNotesButtonTapped(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new NotesPage());
+            if (Application.Current != null)
+            {
+                var notesWindow = new Simulator.Notes();
+                Application.Current.OpenWindow(notesWindow);
+            }
+            else
+            {
+                Console.WriteLine("Application.Current is null. Cannot open the new window.");
+            }
         }
 
         private async void OnStorageAccessClicked(object sender, EventArgs e)

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Window xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+        x:Class="Simulator.Notes">
+    <ContentPage>
+        <VerticalStackLayout Padding="10">
+            <Editor 
+                Placeholder="Take a note..." 
+                BackgroundColor="#FFE6E6"
+                TextColor="Black"
+                PlaceholderColor="Gray"
+                FontSize="16"
+                HeightRequest="300"
+                VerticalOptions="StartAndExpand" 
+                HorizontalOptions="FillAndExpand"
+                Margin="0,5"/>
+        </VerticalStackLayout>
+    </ContentPage>
+</Window>
