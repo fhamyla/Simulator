@@ -55,7 +55,7 @@ namespace Simulator
 
         private async void OnYTButtonTapped(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new FacebookPage());
+            await Navigation.PushAsync(new YouTubePage());
         }
 
         private async void OnStorageAccessClicked(object sender, EventArgs e)
