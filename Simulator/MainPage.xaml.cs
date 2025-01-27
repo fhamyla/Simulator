@@ -227,5 +227,23 @@ namespace Simulator
     Console.WriteLine("Task Manager is only available on Windows.");
 #endif
         }
+
+        private void OnSettingsButtonClicked(object sender, EventArgs e)
+        {
+#if WINDOWS
+            var uri = new Uri("ms-settings:");
+            Launcher.Default.OpenAsync(uri);
+#elif ANDROID
+    // Open Android Settings
+    var intent = new Android.Content.Intent(Android.Provider.Settings.ActionSettings);
+    Android.App.Application.Context.StartActivity(intent);
+#elif IOS
+    // Open iOS Settings
+    var uri = new Uri("App-Prefs:");
+    Launcher.Default.OpenAsync(uri); // This can be called without 'await'
+#else
+    DisplayAlert("Unsupported", "Opening settings is not supported on this platform.", "OK");
+#endif
+        }
     }
 }

@@ -102,7 +102,7 @@
                         <FileImageSource File="taskmanager.png" />
                     </Button.ImageSource>
                 </Button>
-                <Button BackgroundColor="Transparent">
+                <Button BackgroundColor="Transparent" Clicked="OnSettingsButtonClicked">
                     <Button.ImageSource>
                         <FileImageSource File="settings.png" />
                     </Button.ImageSource>
