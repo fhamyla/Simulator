@@ -97,7 +97,7 @@
                         <FileImageSource File="app.png" />
                     </Button.ImageSource>
                 </Button>
-                <Button BackgroundColor="Transparent">
+                <Button BackgroundColor="Transparent" Clicked="OpenTaskManager">
                     <Button.ImageSource>
                         <FileImageSource File="taskmanager.png" />
                     </Button.ImageSource>

@@ -20,11 +20,9 @@ namespace Simulator
         {
             InitializeComponent();
 
-            // Initialize and configure the timer
-            _timer = new System.Timers.Timer(60000); // 1-minute interval
+            _timer = new System.Timers.Timer(60000);
             _timer.Elapsed += (s, e) =>
             {
-                // Ensure the UI is updated on the main thread
                 Dispatcher.Dispatch(() =>
                 {
                     UpdateDateTime();
@@ -33,23 +31,20 @@ namespace Simulator
             };
             _timer.Start();
 
-            // Force an initial update to show the current time and date
             UpdateDateTime();
             UpdateBatteryStatus();
         }
 
         private void UpdateDateTime()
         {
-            // Use the current system time to update labels
-            TimeLabel.Text = DateTime.Now.ToString("h:mm tt");  // e.g., "12:30 PM"
-            DateLabel.Text = DateTime.Now.ToString("M/d/yyyy"); // e.g., "1/27/2025"
+            TimeLabel.Text = DateTime.Now.ToString("h:mm tt");
+            DateLabel.Text = DateTime.Now.ToString("M/d/yyyy");
         }
 
         private void UpdateBatteryStatus()
         {
-            // Get the battery charge level and display it
-            var batteryLevel = Battery.ChargeLevel * 100; // Convert to percentage
-            BatteryLabel.Text = $"Battery {batteryLevel:0}%"; // e.g., "Battery 75%"
+            var batteryLevel = Battery.ChargeLevel * 100;
+            BatteryLabel.Text = $"Battery {batteryLevel:0}%";
         }
 
         protected override void OnDisappearing()
@@ -211,6 +206,26 @@ namespace Simulator
             {
                 Console.WriteLine($"Error accessing storage: {ex.Message}");
             }
+        }
+
+        private void OpenTaskManager(object sender, EventArgs e)
+        {
+#if WINDOWS
+            try
+            {
+                System.Diagnostics.Process.Start(new ProcessStartInfo
+                {
+                    FileName = "taskmgr.exe",
+                    UseShellExecute = true
+                });
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error opening Task Manager: {ex.Message}");
+            }
+#else
+    Console.WriteLine("Task Manager is only available on Windows.");
+#endif
         }
     }
 }
