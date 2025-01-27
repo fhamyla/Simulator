@@ -9,6 +9,7 @@ using System;
 using System.ComponentModel;
 using System.Timers;
 using Microsoft.Maui.Dispatching;
+using Microsoft.Maui.Controls.Compatibility;
 
 namespace Simulator
 {
@@ -242,6 +243,110 @@ namespace Simulator
 #else
     DisplayAlert("Unsupported", "Opening settings is not supported on this platform.", "OK");
 #endif
+        }
+
+        private async void OnPowerButtonClicked(object sender, EventArgs e)
+        {
+            string action = await DisplayActionSheet("Choose an option:", "Cancel", null, "Sleep", "Restart", "Shutdown");
+
+            switch (action)
+            {
+                case "Sleep":
+                    await EnterSleepMode();
+                    break;
+
+                case "Restart":
+                    await RestartApplication();
+                    break;
+
+                case "Shutdown":
+                    await ShutdownApplication();
+                    break;
+
+                default:
+                    break;
+            }
+        }
+
+        private async Task RestartApplication()
+        {
+            await DisplayAlert("Restart", "Restarting the program...", "OK");
+            Application.Current!.MainPage = new MainPage();
+        }
+
+        private async Task ShutdownApplication()
+        {
+            bool confirmShutdown = await DisplayAlert("Shutdown", "Are you sure you want to shut down the program?", "Yes", "No");
+            if (confirmShutdown)
+            {
+#if WINDOWS
+                Application.Current?.Quit();
+#elif ANDROID
+        Android.OS.Process.KillProcess(Android.OS.Process.MyPid());
+#elif IOS
+        await DisplayAlert("Unsupported", "Shutdown is not supported on iOS.", "OK");
+#else
+        await DisplayAlert("Unsupported", "Shutdown is not supported on this platform.", "OK");
+#endif
+            }
+        }
+
+        private bool isSleepMode = false;
+
+        private async Task EnterSleepMode()
+        {
+            if (isSleepMode)
+            {
+                await DisplayAlert("Sleep Mode", "The application is already in sleep mode.", "OK");
+                return;
+            }
+
+            isSleepMode = true;
+
+            await DisplayAlert("Sleep Mode", "The program is now in sleep mode. Resume by interacting with the app.", "OK");
+
+            OverlaySleepMode();
+        }
+
+        private void ExitSleepMode()
+        {
+            if (!isSleepMode)
+                return;
+
+            isSleepMode = false;
+
+            RemoveSleepOverlay();
+        }
+
+        private void OverlaySleepMode()
+        {
+            var overlay = new BoxView
+            {
+                BackgroundColor = Colors.Black,
+                Opacity = 0.5,
+                VerticalOptions = LayoutOptions.Fill,
+                HorizontalOptions = LayoutOptions.Fill,
+                InputTransparent = false
+            };
+
+            if (Application.Current?.MainPage is ContentPage page)
+            {
+                var layout = page.Content as Layout<View>;
+                layout?.Children.Add(overlay);
+            }
+        }
+
+        private void RemoveSleepOverlay()
+        {
+            if (Application.Current?.MainPage is ContentPage page && page.Content is Layout<View> layout)
+            {
+                var overlay = layout.Children.LastOrDefault(c => c is BoxView) as BoxView;
+
+                if (overlay != null)
+                {
+                    layout.Children.Remove(overlay);
+                }
+            }
         }
     }
 }

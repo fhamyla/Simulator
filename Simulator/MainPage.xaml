@@ -84,7 +84,7 @@
             </Grid.ColumnDefinitions>
 
             <!-- Start Button -->
-            <Button Grid.Column="0" HorizontalOptions="Start" BackgroundColor="Transparent">
+            <Button Grid.Column="0" HorizontalOptions="Start" BackgroundColor="Transparent" Clicked="OnPowerButtonClicked">
                 <Button.ImageSource>
                     <FileImageSource File="power.png" />
                 </Button.ImageSource>
