@@ -1,9 +1,9 @@
 # 🖥️ OS Simulator
   
-Welcome to ** OS Simulator**! 🚀
+Welcome to **OS Simulator**! 🚀
   
 A playful, cross-platform desktop simulator built with .NET MAUI. Experience a mini desktop environment with app launchers, taskbar, and more—right on your device! 🎉
-
+<img src="Simulator/Resources/Images/ossimulator.png" alt="Dashboard" width="200"/>
 ---
 
 ## ✨ Features
